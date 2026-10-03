@@ -141,10 +141,26 @@ button:focus-visible {
 }
 
 .medallion-face,
-.medallion-face svg {
+.medallion-face svg,
+.medallion-face img {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.medallion-face img {
+  object-fit: contain;
+}
+
+/* Smaller stickers on the character: his face fills less of the frame than the ring did */
+.medallion-stage--image .medallion-spot {
+  font-size: max(0.5rem, calc(var(--m) * 0.037));
+}
+
+/* The character's head tilts around the neck, not the middle of the picture */
+.medallion-stage--image .medallion {
+  -webkit-transform-origin: 50% 70%;
+  transform-origin: 50% 70%;
 }
 
 .medallion-spot {
@@ -212,7 +228,7 @@ button:focus-visible {
 }
 
 .intro-medallion {
-  --m: min(62vw, 48vh);
+  --m: min(72vw, 56vh);
   grid-row: 1;
   grid-column: 1;
 }

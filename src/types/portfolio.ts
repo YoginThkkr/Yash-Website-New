@@ -17,6 +17,10 @@ export interface Profile {
   yearsOfExperience: number;
   bio: string;
   avatarSvg: string;
+  /** Optional character image in /public (e.g. "avatar.webp"). Replaces the SVG when set. */
+  avatarImage?: string;
+  /** PNG fallback for very old browsers without WebP support */
+  avatarImageFallback?: string;
   social: SocialLinks;
 }
 
