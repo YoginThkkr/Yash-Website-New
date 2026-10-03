@@ -26,7 +26,7 @@ const MONOGRAM_SPOTS: SpotSet = {
 };
 
 /* On the character, per angle. Measured from the images; the eyes stay clear. */
-const FACE_SPOTS: Record<AvatarView, SpotSet> = {
+const FACE_SPOTS: Partial<Record<AvatarView, SpotSet>> = {
   front: {
     side: [
       { x: 33, y: 57, tilt: -12 }, // left cheek
@@ -96,7 +96,16 @@ function assignSpots(stickers: StickerData[], set: SpotSet): Spot[] {
   });
 }
 
-const VIEWS: AvatarView[] = ["front", "threeQuarter", "side", "back"];
+const VIEWS: AvatarView[] = [
+  "front",
+  "threeQuarter",
+  "threeQuarterLeft",
+  "side",
+  "back",
+  "lookUp",
+  "lookUpLeft",
+  "lookUpRight",
+];
 
 interface Props {
   stickers?: StickerData[];
@@ -104,6 +113,8 @@ interface Props {
   shown?: number;
   /** Which way the character faces (falls back to front if that angle is missing) */
   view?: AvatarView;
+  /** Other angles to keep loaded so switching to them is instant */
+  preload?: AvatarView[];
   /** Coin-like turn for the monogram only, in degrees */
   turn?: MotionValue<number>;
   zoom?: MotionValue<number>;
@@ -117,6 +128,7 @@ export default function Medallion({
   stickers = [],
   shown = stickers.length,
   view = "front",
+  preload = [],
   turn,
   zoom,
   still = false,
@@ -129,8 +141,9 @@ export default function Medallion({
   const activeView: AvatarView = angles && angles[view] ? view : "front";
   const spots = assignSpots(
     stickers,
-    angles ? FACE_SPOTS[activeView] : MONOGRAM_SPOTS,
+    angles ? (FACE_SPOTS[activeView] ?? FACE_SPOTS.front!) : MONOGRAM_SPOTS,
   );
+  const wanted = new Set<AvatarView>(["front", activeView, ...preload]);
 
   return (
     <div
@@ -141,10 +154,10 @@ export default function Medallion({
         style={angles ? { scale: zoom } : { rotateY: turn, scale: zoom }}
       >
         {angles ? (
-          // Every angle is in the page (preloaded); only the active one is shown,
-          // so turning the head never waits for a download.
+          // The angles this view needs are all in the page; only the active one is
+          // shown, so turning the head never waits for a download.
           <div className="medallion-face" role="img" aria-label={`${profile.name}, illustrated`}>
-            {VIEWS.filter((v) => angles[v]).map((v) => (
+            {VIEWS.filter((v) => angles[v] && wanted.has(v)).map((v) => (
               <picture
                 key={v}
                 className={`avatar-angle ${v === activeView ? "avatar-angle--on" : ""}`}
@@ -156,7 +169,7 @@ export default function Medallion({
                   width={622}
                   height={832}
                   decoding="async"
-                  loading={eager || v === "front" ? "eager" : "lazy"}
+                  loading={eager ? "eager" : "lazy"}
                 />
               </picture>
             ))}

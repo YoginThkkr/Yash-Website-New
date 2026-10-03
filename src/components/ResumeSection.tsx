@@ -149,6 +149,7 @@ export default function ResumeSection() {
           stickers={entries.map((e) => e.sticker)}
           shown={active + 1}
           view={viewFor(current)}
+          preload={["threeQuarter", "side"]}
           turn={turn}
           zoom={zoom}
           className="resume-medallion"

@@ -163,7 +163,7 @@ button:focus-visible {
   bottom: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.22s ease;
 }
 
 .avatar-angle--on {
@@ -247,10 +247,15 @@ button:focus-visible {
   text-align: center;
 }
 
-.intro-medallion {
-  --m: min(72vw, 56vh);
+.intro-avatar {
   grid-row: 1;
   grid-column: 1;
+  -webkit-transform-origin: 50% 85%;
+  transform-origin: 50% 85%;
+}
+
+.intro-medallion {
+  --m: min(72vw, 56vh);
 }
 
 .intro-title {

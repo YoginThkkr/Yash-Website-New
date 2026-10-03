@@ -13,7 +13,11 @@
       "front": "avatar-front",
       "threeQuarter": "avatar-three-quarter",
       "side": "avatar-side",
-      "back": "avatar-back"
+      "back": "avatar-back",
+      "threeQuarterLeft": "avatar-three-quarter-left",
+      "lookUp": "avatar-look-up",
+      "lookUpLeft": "avatar-look-up-left",
+      "lookUpRight": "avatar-look-up-right"
     },
     "social": {
       "github": "",

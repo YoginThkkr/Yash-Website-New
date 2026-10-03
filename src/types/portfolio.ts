@@ -7,13 +7,26 @@ export interface SocialLinks {
   website: string;
 }
 
-export type AvatarView = "front" | "threeQuarter" | "side" | "back";
+export type AvatarView =
+  | "front"
+  | "threeQuarter" // turned towards the right of the screen
+  | "threeQuarterLeft" // turned towards the left of the screen
+  | "side"
+  | "back"
+  | "lookUp"
+  | "lookUpLeft"
+  | "lookUpRight";
 
 export interface AvatarAngles {
   front: string;
   threeQuarter?: string;
   side?: string;
   back?: string;
+  /** Extra poses used by the intro, where the head follows the cursor */
+  threeQuarterLeft?: string;
+  lookUp?: string;
+  lookUpLeft?: string;
+  lookUpRight?: string;
 }
 
 export interface Profile {
