@@ -13,7 +13,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Kanit", "sans-serif"],
+        sans: ["Kanit", "Helvetica Neue", "Arial", "sans-serif"],
+        display: ["Instrument Serif", "Georgia", "Times New Roman", "serif"],
       },
       backgroundImage: {
         "accent-gradient":

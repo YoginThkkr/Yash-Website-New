@@ -1,10 +1,8 @@
 import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import AboutSection from "./components/AboutSection";
-import ExperienceSection from "./components/ExperienceSection";
-import ServicesSection from "./components/ServicesSection";
-import ProjectsSection from "./components/ProjectsSection";
-import TestimonialsSection from "./components/TestimonialsSection";
+import IntroSection from "./components/IntroSection";
+import ResumeSection from "./components/ResumeSection";
+import WorksSection from "./components/WorksSection";
+import ToolkitSection from "./components/ToolkitSection";
 import Footer from "./components/Footer";
 
 function App() {
@@ -12,12 +10,10 @@ function App() {
     <div className="min-h-screen bg-page font-sans text-black">
       <Navbar />
       <main>
-        <HeroSection />
-        <AboutSection />
-        <ExperienceSection />
-        <ServicesSection />
-        <ProjectsSection />
-        <TestimonialsSection />
+        <IntroSection />
+        <ResumeSection />
+        <WorksSection />
+        <ToolkitSection />
       </main>
       <Footer />
     </div>

@@ -29,6 +29,14 @@ export interface Skills {
   categories: SkillCategory[];
 }
 
+export interface Sticker {
+  /** Short text printed on the sticker, e.g. "NIFT" */
+  label: string;
+  shape: "pill" | "circle" | "square" | "tag";
+  /** Sticker fill colour; text on it is always black */
+  color: string;
+}
+
 export interface Experience {
   company: string;
   role: string;
@@ -36,6 +44,9 @@ export interface Experience {
   location: string;
   summary: string;
   highlights: string[];
+  /** Three short lines shown in the scrolling résumé */
+  points?: string[];
+  sticker?: Sticker;
 }
 
 export interface Project {
@@ -56,6 +67,7 @@ export interface Education {
   credential: string;
   period: string;
   note: string;
+  sticker?: Sticker;
 }
 
 export interface Testimonial {

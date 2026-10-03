@@ -66,6 +66,16 @@
         "Collaborate closely with Buying, Merchandising and Production teams to execute creative vision and deliver commercially successful product on time.",
         "Manage the design process end-to-end: track critical path timelines and prepare tech packs, CADs and fabric-trim sheets for supplier meetings and bulk production.",
         "Analyse sell-through data and customer feedback with Buying and Merchandising to inform future design decisions."
+      ],
+      "sticker": {
+        "label": "LANDMARK",
+        "shape": "pill",
+        "color": "#FED7AA"
+      },
+      "points": [
+        "Owns two denim brands, menswear and womenswear",
+        "Trend boards, range plans and tech packs",
+        "Works with Buying, Merchandising and Production"
       ]
     },
     {
@@ -79,6 +89,16 @@
         "Interfaced with pattern makers and manufacturing teams to execute successful, quality-compliant product launches.",
         "Managed a team of two junior designers and mentored interns and college students on final-year design projects.",
         "Illustrated graphics for licensed properties (Pink Panther, Popeye, Marvel, DC); designed the highest-selling Truck Art and Stranger Things collections."
+      ],
+      "sticker": {
+        "label": "TSS",
+        "shape": "circle",
+        "color": "#FBCFE8"
+      },
+      "points": [
+        "Women’s, men’s and kids’ ranges, concept to launch",
+        "Best-selling Truck Art and Stranger Things collections",
+        "Led two junior designers and mentored interns"
       ]
     },
     {
@@ -91,6 +111,16 @@
         "Spearheaded end-to-end design and development for men's and women's clothing, from original flat sketches through to tech packs.",
         "Conducted global trend research and competitive analysis to inform seasonal lines presented to senior leadership.",
         "Sourced and evaluated fabrics and trims with vendors and mills, collaborating with Buying, Merchandising and Product Development on print, fabric and trim selections."
+      ],
+      "sticker": {
+        "label": "SPRING MAN",
+        "shape": "tag",
+        "color": "#BBF7D0"
+      },
+      "points": [
+        "Men’s and women’s clothing, sketch to tech pack",
+        "Trend research for seasonal lines",
+        "Fabric and trim sourcing with mills"
       ]
     },
     {
@@ -103,6 +133,16 @@
         "Supported the buying and planning process, aligning design concepts with assortment strategies, sales goals and market demand.",
         "Researched contemporary fashion and graphic trends, translating insights into on-brand, trend-forward applications.",
         "Led fabric sourcing and tech pack creation; regularly presented style and fit proposals to senior leadership."
+      ],
+      "sticker": {
+        "label": "AJIO",
+        "shape": "square",
+        "color": "#BAE6FD"
+      },
+      "points": [
+        "Buying and planning support",
+        "Trend research into on-brand designs",
+        "Fabric sourcing and tech packs"
       ]
     }
   ],
@@ -177,19 +217,34 @@
       "institution": "NMIMS, Mumbai, India",
       "credential": "Master's in Retail Management",
       "period": "May 2023 — May 2025",
-      "note": ""
+      "note": "",
+      "sticker": {
+        "label": "NMIMS",
+        "shape": "square",
+        "color": "#E9D5FF"
+      }
     },
     {
       "institution": "NIFT, Mumbai, India",
       "credential": "Fashion Design",
       "period": "August 2016 — August 2018",
-      "note": ""
+      "note": "",
+      "sticker": {
+        "label": "NIFT",
+        "shape": "circle",
+        "color": "#FEF08A"
+      }
     },
     {
       "institution": "Mumbai University, Mumbai, India",
       "credential": "Bachelor's in Commerce",
       "period": "October 2017 — October 2020",
-      "note": ""
+      "note": "",
+      "sticker": {
+        "label": "MU",
+        "shape": "tag",
+        "color": "#FECACA"
+      }
     }
   ],
   "testimonials": []

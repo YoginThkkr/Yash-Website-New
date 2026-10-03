@@ -4,11 +4,10 @@ import { usePortfolio } from "../hooks/usePortfolio";
 import SocialLinks from "./SocialLinks";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "#top" },
+  { label: "Résumé", href: "#resume" },
+  { label: "Works", href: "#works" },
+  { label: "Toolkit", href: "#toolkit" },
 ];
 
 export default function Footer() {
@@ -31,7 +30,7 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl">
         <div className="grid gap-12 sm:grid-cols-3">
           <div>
-            <p className="chrome-text text-2xl font-semibold">{profile.name}</p>
+            <p className="font-display text-4xl text-black">{profile.name}</p>
             <p className="mt-2 text-sm text-black">{profile.specialization}</p>
             <p className="mt-1 text-sm text-black">{profile.location}</p>
           </div>
