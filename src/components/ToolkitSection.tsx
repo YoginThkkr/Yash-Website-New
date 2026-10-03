@@ -7,7 +7,7 @@ export default function ToolkitSection() {
   return (
     <section id="toolkit" className="section-pad">
       <div className="mx-auto max-w-5xl px-6">
-        <h2 className="section-title font-display">Toolkit</h2>
+        <h2 className="section-title font-display">Skills</h2>
         <div className="toolkit-grid">
           {skills.categories.map((category) => (
             <div key={category.name}>
