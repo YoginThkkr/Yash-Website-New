@@ -7,6 +7,15 @@ export interface SocialLinks {
   website: string;
 }
 
+export type AvatarView = "front" | "threeQuarter" | "side" | "back";
+
+export interface AvatarAngles {
+  front: string;
+  threeQuarter?: string;
+  side?: string;
+  back?: string;
+}
+
 export interface Profile {
   name: string;
   shortName: string;
@@ -17,10 +26,11 @@ export interface Profile {
   yearsOfExperience: number;
   bio: string;
   avatarSvg: string;
-  /** Optional character image in /public (e.g. "avatar.webp"). Replaces the SVG when set. */
-  avatarImage?: string;
-  /** PNG fallback for very old browsers without WebP support */
-  avatarImageFallback?: string;
+  /**
+   * Optional character images in /public, by file name without extension.
+   * Each needs a .webp and a .png. Replaces the SVG monogram when set.
+   */
+  avatar?: AvatarAngles;
   social: SocialLinks;
 }
 

@@ -3,7 +3,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { usePortfolio } from "../hooks/usePortfolio";
 import { useMediaQuery, useReducedMotion } from "../hooks/useMediaQuery";
 import type { Project } from "../types/portfolio";
-import { buildTimeline } from "../lib/timeline";
 import Medallion from "./Medallion";
 
 function WorkPanel({ project, index }: { project: Project; index: number }) {
@@ -70,8 +69,6 @@ function StackedWorks({ projects }: { projects: Project[] }) {
 }
 
 function SidewaysWorks({ projects }: { projects: Project[] }) {
-  const data = usePortfolio();
-  const stickers = buildTimeline(data).map((e) => e.sticker);
   const sectionRef = useRef<HTMLElement>(null);
   const windowRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -116,7 +113,7 @@ function SidewaysWorks({ projects }: { projects: Project[] }) {
       <div className="works-sticky">
         <div className="works-side">
           <h2 className="works-heading font-display">Works</h2>
-          <Medallion stickers={stickers} still className="works-medallion" />
+          <Medallion view="back" still className="works-medallion" />
         </div>
 
         <div ref={windowRef} className="works-window">

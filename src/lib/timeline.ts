@@ -1,16 +1,25 @@
 import type { Portfolio, Sticker } from "../types/portfolio";
 
+export type TimelineGroup = "work" | "study";
+
 export interface TimelineEntry {
   key: string;
+  group: TimelineGroup;
   years: string;
   title: string;
   subtitle: string;
   location: string;
   points: string[];
   sticker: Sticker;
-  kind: "work" | "study";
-  sortKey: number;
+  /** Position within its own group (1-based) and the group's size */
+  groupIndex: number;
+  groupSize: number;
 }
+
+export const GROUP_LABEL: Record<TimelineGroup, string> = {
+  work: "Work experience",
+  study: "Education",
+};
 
 const MONTHS = [
   "jan", "feb", "mar", "apr", "may", "jun",
@@ -39,31 +48,42 @@ function shortYears(period: string): string {
 
 const FALLBACK: Sticker = { label: "★", shape: "circle", color: "#F5F5F5" };
 
-/** Education and experience merged into one oldest-first story. */
+/**
+ * Work experience first, then education, like a CV.
+ * Within each group the most recent comes first.
+ */
 export function buildTimeline(data: Portfolio): TimelineEntry[] {
-  const work: TimelineEntry[] = data.experience.map((job) => ({
+  const newestFirst = <T extends { period: string }>(items: T[]) =>
+    [...items].sort((a, b) => startValue(b.period) - startValue(a.period));
+
+  const work = newestFirst(data.experience);
+  const study = newestFirst(data.education);
+
+  const workEntries: TimelineEntry[] = work.map((job, i) => ({
     key: `work-${job.company}-${job.period}`,
+    group: "work",
     years: shortYears(job.period),
     title: job.company,
     subtitle: job.role,
     location: job.location,
     points: (job.points ?? job.highlights).slice(0, 3),
     sticker: job.sticker ?? FALLBACK,
-    kind: "work",
-    sortKey: startValue(job.period),
+    groupIndex: i + 1,
+    groupSize: work.length,
   }));
 
-  const study: TimelineEntry[] = data.education.map((item) => ({
+  const studyEntries: TimelineEntry[] = study.map((item, i) => ({
     key: `study-${item.institution}-${item.period}`,
+    group: "study",
     years: shortYears(item.period),
     title: item.institution.split(",")[0],
     subtitle: item.credential,
     location: item.institution.split(",").slice(1).join(",").trim(),
     points: item.note ? [item.note] : [],
     sticker: item.sticker ?? FALLBACK,
-    kind: "study",
-    sortKey: startValue(item.period),
+    groupIndex: i + 1,
+    groupSize: study.length,
   }));
 
-  return [...work, ...study].sort((a, b) => a.sortKey - b.sortKey);
+  return [...workEntries, ...studyEntries];
 }

@@ -8,7 +8,7 @@ export default function IntroSection() {
   return (
     <section id="top" className="intro">
       <div className="intro-grid">
-        <Medallion className="intro-medallion" />
+        <Medallion className="intro-medallion" view="front" eager />
         <h1 className="intro-title font-display">About {profile.shortName}</h1>
         <p className="intro-bio prose-copy">{profile.bio}</p>
       </div>

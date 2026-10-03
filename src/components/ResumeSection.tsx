@@ -8,7 +8,13 @@ import {
 } from "framer-motion";
 import { usePortfolio } from "../hooks/usePortfolio";
 import { useReducedMotion } from "../hooks/useMediaQuery";
-import { buildTimeline, type TimelineEntry } from "../lib/timeline";
+import {
+  buildTimeline,
+  GROUP_LABEL,
+  type TimelineEntry,
+  type TimelineGroup,
+} from "../lib/timeline";
+import type { AvatarView } from "../types/portfolio";
 import Medallion from "./Medallion";
 import Sticker from "./Sticker";
 
@@ -35,6 +41,17 @@ function EntryCard({ entry }: { entry: TimelineEntry }) {
   );
 }
 
+const GROUPS: TimelineGroup[] = ["work", "study"];
+
+/**
+ * The head turns with the story: facing you for the first half of the work
+ * history, three-quarter for the second half, and in profile for education.
+ */
+function viewFor(entry: TimelineEntry): AvatarView {
+  if (entry.group === "study") return "side";
+  return entry.groupIndex <= Math.ceil(entry.groupSize / 2) ? "front" : "threeQuarter";
+}
+
 /* Shown when the visitor prefers reduced motion: same content, no pinning. */
 function StaticResume({ entries }: { entries: TimelineEntry[] }) {
   return (
@@ -47,13 +64,24 @@ function StaticResume({ entries }: { entries: TimelineEntry[] }) {
             still
             className="static-medallion"
           />
-          <ol className="static-list">
-            {entries.map((entry) => (
-              <li key={entry.key}>
-                <EntryCard entry={entry} />
-              </li>
-            ))}
-          </ol>
+          <div>
+            {GROUPS.map((group) => {
+              const items = entries.filter((e) => e.group === group);
+              if (items.length === 0) return null;
+              return (
+                <div key={group} className="static-group">
+                  <h3 className="static-group-name">{GROUP_LABEL[group]}</h3>
+                  <ol className="static-list">
+                    {items.map((entry) => (
+                      <li key={entry.key}>
+                        <EntryCard entry={entry} />
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
@@ -77,9 +105,9 @@ export default function ResumeSection() {
     setActive((prev) => (prev === next ? prev : next));
   });
 
-  // The medallion slowly turns and leans in as the story goes on.
+  // The monogram fallback turns like a coin; the character turns via its angles.
   const turn = useTransform(scrollYProgress, [0, 1], [-22, 22]);
-  const zoom = useTransform(scrollYProgress, [0, 1], [0.94, 1.06]);
+  const zoom = useTransform(scrollYProgress, [0, 1], [0.96, 1.04]);
 
   if (entries.length === 0) return null;
   if (reduced) return <StaticResume entries={entries} />;
@@ -93,15 +121,26 @@ export default function ResumeSection() {
       className="resume"
       style={{ height: `calc(${entries.length} * 70vh + 100vh)` }}
     >
-      {/* Full list for screen readers; the animated view below is visual only. */}
-      <ol className="sr-only">
-        {entries.map((e) => (
-          <li key={e.key}>
-            {e.years}: {e.subtitle}, {e.title}
-            {e.location ? `, ${e.location}` : ""}. {e.points.join(". ")}
-          </li>
-        ))}
-      </ol>
+      {/* Full content for screen readers; the animated view below is visual only. */}
+      <div className="sr-only">
+        {GROUPS.map((group) => {
+          const items = entries.filter((e) => e.group === group);
+          if (items.length === 0) return null;
+          return (
+            <div key={group}>
+              <h3>{GROUP_LABEL[group]}</h3>
+              <ol>
+                {items.map((e) => (
+                  <li key={e.key}>
+                    {e.years}: {e.subtitle}, {e.title}
+                    {e.location ? `, ${e.location}` : ""}. {e.points.join(". ")}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          );
+        })}
+      </div>
 
       <div className="resume-sticky" aria-hidden="true">
         <h2 className="resume-heading font-display">Résumé</h2>
@@ -109,16 +148,20 @@ export default function ResumeSection() {
         <Medallion
           stickers={entries.map((e) => e.sticker)}
           shown={active + 1}
+          view={viewFor(current)}
           turn={turn}
           zoom={zoom}
           className="resume-medallion"
         />
 
         <div className="resume-rail">
-          <span className="rail-dot" />
-          <p className="rail-count">
-            {String(active + 1).padStart(2, "0")} / {String(entries.length).padStart(2, "0")}
-          </p>
+          <div className="rail-group">
+            <p className="rail-group-name">{GROUP_LABEL[current.group]}</p>
+            <p className="rail-count">
+              {String(current.groupIndex).padStart(2, "0")} /{" "}
+              {String(current.groupSize).padStart(2, "0")}
+            </p>
+          </div>
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={current.key}

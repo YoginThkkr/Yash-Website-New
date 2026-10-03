@@ -9,8 +9,12 @@
     "yearsOfExperience": 8,
     "bio": "An adept and NIFT-accredited fashion designer with a strong foundation in fashion, merchandising and sourcing. Known for conceptualising and delivering innovative, trend-forward designs that align seamlessly with brand identity and customer expectations. Skilled in sketch development, fabric and trim selection, sourcing, fittings and final garment. Brings a forward-thinking approach to fashion design, merging creativity with commercial viability to produce compelling, market-relevant collections.",
     "avatarSvg": "<svg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Yash Thakkar monogram'><circle cx='80' cy='80' r='78' fill='#ffffff' stroke='#000000' stroke-width='1.5'/><circle cx='80' cy='80' r='64' fill='none' stroke='#000000' stroke-width='1'/><text x='80' y='97' font-family='Kanit, sans-serif' font-size='44' font-weight='600' text-anchor='middle' fill='#000000'>YT</text></svg>",
-    "avatarImage": "avatar.webp",
-    "avatarImageFallback": "avatar.png",
+    "avatar": {
+      "front": "avatar-front",
+      "threeQuarter": "avatar-three-quarter",
+      "side": "avatar-side",
+      "back": "avatar-back"
+    },
     "social": {
       "github": "",
       "instagram": "",
