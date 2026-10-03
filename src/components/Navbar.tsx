@@ -4,7 +4,7 @@ import { usePortfolio } from "../hooks/usePortfolio";
 const LINKS = [
   { label: "Résumé", href: "#resume" },
   { label: "Works", href: "#works" },
-  { label: "Toolkit", href: "#toolkit" },
+  { label: "Skills", href: "#toolkit" },
   { label: "Contact", href: "#contact" },
 ];
 
