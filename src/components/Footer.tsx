@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { label: "About", href: "#top" },
   { label: "Résumé", href: "#resume" },
   { label: "Works", href: "#works" },
-  { label: "Toolkit", href: "#toolkit" },
+  { label: "Skills", href: "#toolkit" },
 ];
 
 export default function Footer() {
