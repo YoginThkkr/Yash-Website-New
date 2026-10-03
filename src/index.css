@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light theme only: white background, black text, in every browser */
+:root {
+  color-scheme: light only;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Kanit", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+::selection {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Headline and footer brand: solid black text (no gradient clipping, so Safari and Chrome render identically) */
+.hero-heading,
+.chrome-text,
+.accent-gradient-text {
+  color: #000000;
+  -webkit-text-fill-color: #000000;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  overflow: hidden; /* safety net so the headline can never cause sideways scroll */
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto auto;
+  justify-items: center;
+}
+
+.hero-title {
+  grid-row: 1;
+  grid-column: 1;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: clamp(3rem, 13vw, 14rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.hero-avatar {
+  grid-row: 2;
+  grid-column: 1;
+  position: relative;
+  z-index: 2; /* sits above the headline */
+  width: clamp(8.5rem, 26vw, 22rem);
+  aspect-ratio: 1 / 1;
+  /* pull the avatar up so it overlaps the lower part of the headline */
+  margin-top: clamp(-6.5rem, -6vw, -1.6rem);
+}
+
+.hero-avatar svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-copy {
+  grid-row: 3;
+  grid-column: 1;
+  margin-top: 2rem;
+}
+
+/* Purple -> magenta -> orange accent, used as the background of primary buttons */
+.accent-gradient {
+  background: linear-gradient(90deg, #a855f7 0%, #d946a8 50%, #f97316 100%);
+}
+
+/* About bio: never break mid-word */
+.prose-copy {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+/* Testimonials marquee */
+.marquee-row {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  -webkit-animation: marquee 36s linear infinite;
+  animation: marquee 36s linear infinite;
+}
+
+.marquee-row:hover .marquee-track {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+@-webkit-keyframes marquee {
+  0% { -webkit-transform: translateX(0); transform: translateX(0); }
+  100% { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    -webkit-animation: none;
+    animation: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .marquee-track > * {
+    scroll-snap-align: start;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.marquee-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #000000;
+  outline-offset: 3px;
+}

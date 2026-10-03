@@ -1,0 +1,196 @@
+{
+  "profile": {
+    "name": "Yash Thakkar",
+    "shortName": "Yash",
+    "tagline": "Designing trend-forward collections that earn their shelf space, from first sketch to final garment.",
+    "role": "Senior Designer",
+    "specialization": "Fashion Design, Merchandising & Sourcing",
+    "location": "Dubai, UAE",
+    "yearsOfExperience": 8,
+    "bio": "An adept and NIFT-accredited fashion designer with a strong foundation in fashion, merchandising and sourcing. Known for conceptualising and delivering innovative, trend-forward designs that align seamlessly with brand identity and customer expectations. Skilled in sketch development, fabric and trim selection, sourcing, fittings and final garment. Brings a forward-thinking approach to fashion design, merging creativity with commercial viability to produce compelling, market-relevant collections.",
+    "avatarSvg": "<svg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Yash Thakkar monogram'><circle cx='80' cy='80' r='78' fill='#ffffff' stroke='#000000' stroke-width='1.5'/><circle cx='80' cy='80' r='64' fill='none' stroke='#000000' stroke-width='1'/><text x='80' y='97' font-family='Kanit, sans-serif' font-size='44' font-weight='600' text-anchor='middle' fill='#000000'>YT</text></svg>",
+    "social": {
+      "github": "",
+      "instagram": "",
+      "linkedin": "",
+      "email": "thakkrr.yash@gmail.com",
+      "phone": "+971 55 397 9621",
+      "website": ""
+    }
+  },
+  "skills": {
+    "categories": [
+      {
+        "name": "Design & Creative",
+        "items": [
+          "Fashion Illustration",
+          "Trend Forecasting",
+          "Range & Collection Building",
+          "Colour Theory",
+          "Attention to Detail"
+        ]
+      },
+      {
+        "name": "Technical & Tools",
+        "items": [
+          "Tech Packs & CADs",
+          "Adobe Illustrator",
+          "Adobe Photoshop",
+          "Clo3D",
+          "Midjourney",
+          "Raspberry AI"
+        ]
+      },
+      {
+        "name": "Process & Collaboration",
+        "items": [
+          "Buying & Sourcing",
+          "Fabric & Trim Selection",
+          "Cross-Functional Collaboration",
+          "Sell-Through Data Analysis",
+          "Mentorship"
+        ]
+      }
+    ]
+  },
+  "experience": [
+    {
+      "company": "Landmark Group (Lee Cooper & DNM)",
+      "role": "Senior Designer",
+      "period": "May 2024 — Present",
+      "location": "Dubai, UAE",
+      "summary": "Owning the end-to-end design lifecycle for two denim brands across menswear and womenswear, aligning every collection with brand identity, global trends and regional market preferences.",
+      "highlights": [
+        "Proactively managed and owned the end-to-end design lifecycle for two denim brands across menswear and womenswear, aligning collections with brand identity, global trends and regional market preferences.",
+        "Conceptualise seasonal collections, trend boards and range plans, translating trend research (WGSN, catwalks, street style, Edited) into commercially viable, fashion-forward ranges.",
+        "Collaborate closely with Buying, Merchandising and Production teams to execute creative vision and deliver commercially successful product on time.",
+        "Manage the design process end-to-end: track critical path timelines and prepare tech packs, CADs and fabric-trim sheets for supplier meetings and bulk production.",
+        "Analyse sell-through data and customer feedback with Buying and Merchandising to inform future design decisions."
+      ]
+    },
+    {
+      "company": "The Souled Store",
+      "role": "Designer",
+      "period": "February 2021 — March 2023",
+      "location": "Mumbai, India",
+      "summary": "Designed across women's, men's and kids' categories from concept to launch, including the brand's highest-selling licensed and graphic collections.",
+      "highlights": [
+        "Coordinated with cross-functional and creative teams to develop fashion products across women's, men's and kids' categories, from concept through to launch.",
+        "Interfaced with pattern makers and manufacturing teams to execute successful, quality-compliant product launches.",
+        "Managed a team of two junior designers and mentored interns and college students on final-year design projects.",
+        "Illustrated graphics for licensed properties (Pink Panther, Popeye, Marvel, DC); designed the highest-selling Truck Art and Stranger Things collections."
+      ]
+    },
+    {
+      "company": "Spring Man Apparels",
+      "role": "Designer",
+      "period": "May 2019 — January 2021",
+      "location": "Mumbai, India",
+      "summary": "Spearheaded end-to-end design and development for men's and women's clothing, from original flat sketches through to tech packs.",
+      "highlights": [
+        "Spearheaded end-to-end design and development for men's and women's clothing, from original flat sketches through to tech packs.",
+        "Conducted global trend research and competitive analysis to inform seasonal lines presented to senior leadership.",
+        "Sourced and evaluated fabrics and trims with vendors and mills, collaborating with Buying, Merchandising and Product Development on print, fabric and trim selections."
+      ]
+    },
+    {
+      "company": "Reliance Ajio",
+      "role": "Buying & Planning Intern",
+      "period": "August 2018 — December 2018",
+      "location": "Bangalore, India",
+      "summary": "Supported the buying and planning process, aligning design concepts with assortment strategies, sales goals and market demand.",
+      "highlights": [
+        "Supported the buying and planning process, aligning design concepts with assortment strategies, sales goals and market demand.",
+        "Researched contemporary fashion and graphic trends, translating insights into on-brand, trend-forward applications.",
+        "Led fabric sourcing and tech pack creation; regularly presented style and fit proposals to senior leadership."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "stranger-things",
+      "title": "Stranger Things Collection",
+      "subtitle": "The Souled Store — Licensed Graphic Apparel",
+      "description": "Led design on The Souled Store's Stranger Things collection, translating the show's visual world into one of the brand's highest-selling licensed ranges.",
+      "stack": [
+        "Licensed IP",
+        "Graphic Design",
+        "Apparel"
+      ],
+      "role": "Designer",
+      "year": "2022",
+      "link": "",
+      "image": "",
+      "highlight": true
+    },
+    {
+      "id": "truck-art",
+      "title": "Truck Art Collection",
+      "subtitle": "The Souled Store — Original Graphic Range",
+      "description": "Designed a collection inspired by South Asian truck art, reworking traditional motifs into a contemporary streetwear range that became one of the brand's best performers.",
+      "stack": [
+        "Original Graphics",
+        "Trend Research",
+        "Apparel"
+      ],
+      "role": "Designer",
+      "year": "2022",
+      "link": "",
+      "image": "",
+      "highlight": true
+    },
+    {
+      "id": "lee-cooper-dnm",
+      "title": "Lee Cooper & DNM Denim Ranges",
+      "subtitle": "Landmark Group — Seasonal Denim Collections",
+      "description": "Own seasonal denim collections end-to-end for two brands across menswear and womenswear, from trend boards and range plans through to tech packs and bulk production.",
+      "stack": [
+        "Denim",
+        "Range Planning",
+        "Tech Packs & CADs"
+      ],
+      "role": "Senior Designer",
+      "year": "2024 — Present",
+      "link": "",
+      "image": "",
+      "highlight": true
+    },
+    {
+      "id": "licensed-graphics",
+      "title": "Licensed Character Graphics",
+      "subtitle": "Marvel · DC · Pink Panther · Popeye",
+      "description": "Illustrated graphics for major licensed properties, balancing brand guidelines from rights holders with trend-forward apparel design.",
+      "stack": [
+        "Illustration",
+        "Licensing",
+        "Graphic Design"
+      ],
+      "role": "Designer",
+      "year": "2021 — 2024",
+      "link": "",
+      "image": "",
+      "highlight": false
+    }
+  ],
+  "education": [
+    {
+      "institution": "NMIMS, Mumbai, India",
+      "credential": "Master's in Retail Management",
+      "period": "May 2023 — May 2025",
+      "note": ""
+    },
+    {
+      "institution": "NIFT, Mumbai, India",
+      "credential": "Fashion Design",
+      "period": "August 2016 — August 2018",
+      "note": ""
+    },
+    {
+      "institution": "Mumbai University, Mumbai, India",
+      "credential": "Bachelor's in Commerce",
+      "period": "October 2017 — October 2020",
+      "note": ""
+    }
+  ],
+  "testimonials": []
+}
